@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.bar.model.Model;
+import it.polito.tdp.bar.model.Statistiche;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -29,7 +30,9 @@ public class FXMLController {
     	this.txtResult.clear();
     	this.model.eseguiSimulator();
     	
-    	this.txtResult.appendText(String.format("I clienti totali sono %d, di cui %d soddisfatti e %d insoddisfatti", model.getClienti(), model.getSoddisfatti(), model.getInsoddisfatti()));
+    	Statistiche stat=model.getStatistiche();
+    	
+    	txtResult.appendText(String.format("Totali %d clienti, di cui:\nSoddisfatti ==>%d\nInsoddistafatti ==>%d\n",stat.getNumClientiTot(),stat.getNumClientiSoddisfatti(), stat.getNumClientiInsoddisfatti()));
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
