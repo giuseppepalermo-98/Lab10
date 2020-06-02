@@ -30,7 +30,7 @@
                   <Insets top="12.0" />
                </VBox.margin>
             </Label>
-            <TextArea fx:id="txtResult" />
+            <TextArea fx:id="txtResult" editable="false" />
          </children>
       </VBox>
    </center>
